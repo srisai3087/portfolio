@@ -3,7 +3,7 @@ import './App.css'
 import CertificatesCarousel from './pages/CertificatesCarousel'
 import Footer from './pages/Footer'
 import HeroSection from './pages/HeroSection'
-import Projects from './pages/LAtestWorks'
+import Projects from './pages/LatestWorks'
 import Skills from './pages/Skills'
 import Header from './pages/Header';
 function App() {
