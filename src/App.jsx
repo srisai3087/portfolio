@@ -6,6 +6,8 @@ import HeroSection from './pages/HeroSection'
 import Projects from './pages/LatestWorks'
 import Skills from './pages/Skills'
 import Header from './pages/Header';
+import ContactPage from './ui/ContactPage';
+
 function App() {
 
   return (
@@ -15,6 +17,7 @@ function App() {
     <Skills/>
     <Projects/>
     <CertificatesCarousel/>
+    <ContactPage/>
     <Footer/>
 </>
   )

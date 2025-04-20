@@ -8,11 +8,17 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 const CertificatesCarousel = () => {
   return (
     <section
-      className="py-20 px-6 md:px-12 relative section-highlight bg-[#0c0d12]"
+      className="py-20 px-6 md:px-12 relative section-highlight"
+      style={{ backgroundColor: '#0c0d12' }}
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4 text-white">Certificates/Certifications</h2>
+          <h2
+            className="text-3xl md:text-4xl font-bold font-poppins mb-4"
+            style={{ color: '#6961ff' }}  // 👈 applied the custom color here
+          >
+            Certificates/Certifications
+          </h2>
         </div>
 
         <Swiper

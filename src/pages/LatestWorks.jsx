@@ -12,7 +12,12 @@ const Projects = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4 text-white">Projects</h2>
+          <h2
+            className="text-3xl md:text-4xl font-bold font-poppins mb-4"
+            style={{ color: '#6961ff' }} // 👈 custom heading color
+          >
+            Projects
+          </h2>
           <p className="text-[#E0E0E0] max-w-2xl mx-auto">
             Explore my recent projects that showcase my skills and passion for web development.
           </p>

@@ -23,7 +23,7 @@ export const skills = [
       description: 'A simple website that helps users find donors, donate blood, and access essential pages like contact and about. Includes login and signup (frontend only), with backend development planned.',
       
   
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGVjb21tZXJjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
+      image: '/p1.png',
       technologies: ['HTML5', 'CSS5', 'JavaScript',  'React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Stripe'],
       github: 'https://github.com/srisai3087/Food-Bridge',
       liveDemo: 'https://food-donation-one.vercel.app/',
@@ -41,7 +41,7 @@ export const skills = [
       id: 3,
       title: 'Rawmode Clothing Website',
       description: 'An SEO-friendly eCommerce platform built with Odoo.com, optimized with strategic keywords for better search visibility and enhanced user experience.',
-      image: 'https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+      image: '/p3.png',
       technologies: ['Odoo', 'SEO', 'Keyword Optimization', 'Responsive Design'],
       // github: 'https://github.com/srisurada/weather-dashboard',
       liveDemo: 'https://rawmode.odoo.com/',
@@ -77,31 +77,31 @@ export const skills = [
   export const certificates = [
     {
       id: 1,
-      image: "https://marketplace.canva.com/EAF7h2vFXaU/2/0/1600w/canva-blue-and-gold-elegant-curved-certificate-of-achievement-certificate-HTxQpZIhLas.jpg"
+      image: "/c1.png" 
     },
     {
       id: 2,
-      image: "https://marketplace.canva.com/EAF7h2vFXaU/2/0/1600w/canva-blue-and-gold-elegant-curved-certificate-of-achievement-certificate-HTxQpZIhLas.jpg"
+      image: "/c2.png"
     },
     {
       id: 3,
-      image: "https://marketplace.canva.com/EAF7h2vFXaU/2/0/1600w/canva-blue-and-gold-elegant-curved-certificate-of-achievement-certificate-HTxQpZIhLas.jpg"
+      image: "/c3.png"
     }
   ];  
-  export const contactInfo = [
-    {
-      icon: 'FaMapMarkerAlt',
-      text: 'Andhra Pradesh,India',
-    },
-    {
-      icon: 'FaEnvelope',
-      text: 'suradasrisai5@gmail.com',
-    },
-    {
-      icon: 'FaPhone',
-      text: '6397097000',
-    },
-  ];
+  // export const contactInfo = [
+  //   {
+  //     icon: 'FaMapMarkerAlt',
+  //     text: 'Andhra Pradesh,India',
+  //   },
+  //   {
+  //     icon: 'FaEnvelope',
+  //     text: 'suradasrisai5@gmail.com',
+  //   },
+  //   {
+  //     icon: 'FaPhone',
+  //     text: '6397097000',
+  //   },
+  // ];
   export const socialLinks = [
     {
       id: 1,
@@ -195,4 +195,9 @@ export const skills = [
       icon: 'FaExchangeAlt',
     },
   ];
- 
+  export const contactInfo = [
+    { icon: MapPin, label: 'Location', text: 'Andhra Pradesh, India' },
+    { icon: Mail, label: 'Email', text: 'suradasrisai5@gmail.com' },
+    { icon: Phone, label: 'Phone', text: '6397097000' },
+  ];
+  import { MapPin, Mail, Phone } from 'lucide-react';
