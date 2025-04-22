@@ -1,11 +1,11 @@
-import { ChevronDown, ArrowRight, Download } from 'lucide-react';
+import { ChevronDown, ArrowRight, Download } from "lucide-react";
 
 const HeroSection = () => {
   // Direct scroll function
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -28,22 +28,26 @@ const HeroSection = () => {
                 </span>
               </h2>
               <p className="text-white mb-8 text-lg">
-                I create elegant, functional, and user-centric digital solutions that blend beautiful design with clean code. Let's build something amazing together.
+                I create elegant, functional, and user-centric digital solutions
+                that blend beautiful design with clean code. Let's build
+                something amazing together.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <button
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-[#6961ff] hover:bg-opacity-90 text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center">
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-[#6961ff] hover:bg-opacity-90 text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center"
+                >
                   Hire Me
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
 
                 {/* Download CV button with link */}
                 <a
-                  href="/path/to/your/cv.pdf"  // Provide the correct file path here
-                  download="Sri_Sai_Surada_CV.pdf"  // Optional: Set a filename for download
-                  className="border border-[#6961ff] text-[#6961ff] hover:bg-[#6961ff] hover:text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center">
+                  href="SriSai_Full-Stack-Developer.pdf" 
+                  className="border border-[#6961ff] text-[#6961ff] hover:bg-[#6961ff] hover:text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center"
+                  download
+                >
                   Download CV
                   <Download className="ml-2 h-5 w-5" />
                 </a>
@@ -83,7 +87,7 @@ const HeroSection = () => {
         {/* Scroll Down - Removed blinking */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <button
-            onClick={() => scrollToSection('skills')}
+            onClick={() => scrollToSection("skills")}
             className="flex flex-col items-center text-white hover:text-[#6961ff] transition-colors"
             aria-label="Scroll down"
           >
