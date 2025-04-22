@@ -7,7 +7,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 const CertificatesCarousel = () => {
   return (
-    <section
+    <section id='certificates'
       className="py-20 px-6 md:px-12 relative section-highlight"
       style={{ backgroundColor: '#0c0d12' }}
     >

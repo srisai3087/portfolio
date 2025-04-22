@@ -4,7 +4,7 @@ import ContactInfo from './ContactInfo';
 
 function ContactPage() {
   return (
-    <div className="text-white py-8" style={{ backgroundColor: "#0c0d11" }}>
+    <div  id='contact'  className="text-white py-8" style={{ backgroundColor: "#0c0d11" }}>
       <div className="container mx-auto px-4">
         <header className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2" style={{ color: "#6961ff" }}>
