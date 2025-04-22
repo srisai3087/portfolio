@@ -1,52 +1,128 @@
+import { motion } from 'framer-motion';
 import { skills } from '../lib/data';
 
-const Skills = () => {
-  return (
-    <section
-      id="skills"
-      className="py-20 px-6 md:px-12 relative section-highlight"
-      style={{
-        backgroundColor: '#0c0d12',
-      }}
-    >
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold font-poppins mb-4"
-            style={{ color: '#6961ff' }}
-          >
-            My Skills
-          </h2>
-          <p className="text-[#E0E0E0] max-w-2xl mx-auto">
-            Here are the technologies and tools I've mastered throughout my career as a developer.
-          </p>
-        </div>
+// Brand colors for each technology
+const brandColors = {
+  // Frontend
+  HTML5: '#E34F26',
+  CSS3: '#1572B6',
+  JavaScript: '#F7DF1E',
+  React: '#61DAFB',
+  'Tailwind CSS': '#06B6D4',
+  Bootstrap: '#7952B3',
+  
+  // Backend
+  'Node.js': '#339933',
+  Express: '#000000',
+  Java: '#007396',
+  
+  // Database
+  MongoDB: '#47A248',
+  MySQL: '#4479A1',
+};
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+const Skills = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    }
+  };
+
+  const skillVariants = {
+    hover: {
+      y: -3,
+      scale: 1.03,
+      transition: { duration: 0.3 }
+    }
+  };
+
+  return (
+    <section id="skills" className="py-24 px-6 md:px-12 bg-[#0c0d12]">
+      <div className="max-w-6xl mx-auto">
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-medium text-[#6961ff] tracking-wider">
+            MY SKILLS
+          </h2>
+          <motion.div 
+            className="w-16 h-px bg-[#6961ff] mx-auto mt-4 opacity-70"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          />
+          <p className="text-[#E0E0E0]/80 max-w-2xl mx-auto mt-6 text-sm md:text-base font-light tracking-wide">
+            Technologies and tools I've mastered throughout my development journey
+          </p>
+        </motion.div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:transform hover:-translate-y-1 p-6"
+              variants={itemVariants}
+              className="bg-[#16171d] rounded-xl border border-[#252525] overflow-hidden hover:border-[#6961ff]/30 transition-colors"
             >
-              <h3
-                className="text-xl font-bold mb-4 text-white"
-              >
-                <span style={{ color: '#6961ff' }}>&lt;&gt;</span> {skill.category}
-              </h3>
-              <div className="flex flex-wrap gap-4">
-                {skill.techs.map((tech, techIndex) => (
-                  <div
-                    key={techIndex}
-                    className="flex items-center gap-2 bg-gray-700 text-[#E0E0E0] px-3 py-2 rounded-full text-sm transition-all hover:bg-primary hover:text-white"
-                  >
-                    <tech.icon className="text-[#6961ff] h-5 w-5" />
-                    <span>{tech.label}</span>
-                  </div>
-                ))}
+              <div className="p-6">
+                <h3 className="text-lg font-medium text-white mb-6 flex items-center">
+                  <span className="text-[#6961ff] mr-2 text-xl">&lt;&gt;</span>
+                  {skill.category}
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {skill.techs.map((tech, techIndex) => {
+                    const brandColor = brandColors[tech.label] || '#6961ff';
+                    return (
+                      <motion.div
+                        key={techIndex}
+                        variants={skillVariants}
+                        whileHover="hover"
+                        className="flex items-center gap-2 bg-[#252525]/80 hover:bg-[#252525] text-[#E0E0E0] px-4 py-2 rounded-full border border-[#252525] text-sm transition-all"
+                        style={{
+                          boxShadow: `0 0 0 1px ${brandColor}20`,
+                          borderColor: `${brandColor}30`
+                        }}
+                      >
+                        <tech.icon 
+                          className="h-4 w-4" 
+                          style={{ color: brandColor }}
+                        />
+                        <span className="font-light tracking-wide">{tech.label}</span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

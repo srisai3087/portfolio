@@ -1,81 +1,58 @@
-import { ArrowUpRight } from 'lucide-react';
-import { projects } from '../lib/data';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { certificates } from '../lib/data';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-const Projects = () => {
+const CertificatesCarousel = () => {
   return (
     <section
-      id="projects"
       className="py-20 px-6 md:px-12 relative section-highlight"
-      style={{
-        backgroundColor: '#0c0d12', // Solid background color
-      }}
+      style={{ backgroundColor: '#0c0d12' }}
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2
             className="text-3xl md:text-4xl font-bold font-poppins mb-4"
-            style={{ color: '#6961ff' }} // Custom heading color
+            style={{ color: '#6961ff' }}
           >
-            Projects
+            Certificates / Certifications
           </h2>
-          <p className="text-[#E0E0E0] max-w-2xl mx-auto">
-            Explore my recent projects that showcase my skills and passion for web development.
-          </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div 
-              key={project.id} 
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl hover:scale-105 group max-w-sm mx-auto"
-            >
-              <div className="h-48 overflow-hidden relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform group-hover:scale-110" 
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
+          loop={true}
+        >
+          {certificates.map((certificate) => (
+            <SwiperSlide key={certificate.id}>
+              <div className="rounded-xl overflow-hidden shadow-2xl transition-all hover:shadow-3xl flex flex-col items-center p-4 bg-gray-900">
+                <img
+                  src={certificate.image}
+                  alt={`Certificate ${certificate.id}`}
+                  className="w-full max-w-3xl h-[450px] object-contain rounded-lg mb-4"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[rgba(17,17,17,0.7)]"></div>
+
+                {/* Verify Button */}
+                <button
+                  className="bg-[#6961ff] text-white px-6 py-2 rounded-full text-base font-medium transition-all hover:scale-105"
+                  onClick={() => window.open(certificate.link, '_blank')}
+                >
+                  Verify
+                </button>
               </div>
-              <div className="p-5">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.technologies.map((tech, index) => (
-                    <span 
-                      key={index} 
-                      className="bg-gray-700 text-[#E0E0E0] px-2 py-1 rounded-md text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-white">{project.title}</h3>
-                <p className="text-[#E0E0E0] mb-3 text-sm">{project.description}</p>
-                <div className="flex justify-between items-center">
-                  <a 
-                    href={project.github} 
-                    className="text-primary hover:text-opacity-80 transition-colors text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="underline">View on GitHub</span>
-                  </a>
-                  <a 
-                    href={project.liveDemo} 
-                    className="bg-primary hover:bg-opacity-80 text-white px-4 py-1 rounded-md inline-flex items-center text-sm font-medium transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live Demo
-                    <ArrowUpRight className="ml-1 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default CertificatesCarousel;

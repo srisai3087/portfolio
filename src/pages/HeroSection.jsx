@@ -1,4 +1,5 @@
 import { ChevronDown, ArrowRight, Download } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   // Direct scroll function
@@ -23,8 +24,16 @@ const HeroSection = () => {
                 Sri Sai Surada
               </h1>
               <h2 className="text-2xl md:text-3xl font-medium text-white mb-6">
-                <span className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-transparent">
-                  MERN Stack Developer
+                <span className="text-[#6961ff] text-2xl font-medium">
+                  <Typewriter
+                    words={["MERN Stack Developer", "Full Stack Developer"]}
+                    loop={1}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={60}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
                 </span>
               </h2>
               <p className="text-white mb-8 text-lg">
@@ -44,7 +53,7 @@ const HeroSection = () => {
 
                 {/* Download CV button with link */}
                 <a
-                  href="SriSai_Full-Stack-Developer.pdf" 
+                  href="SriSai_Full-Stack-Developer.pdf"
                   className="border border-[#6961ff] text-[#6961ff] hover:bg-[#6961ff] hover:text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center"
                   download
                 >

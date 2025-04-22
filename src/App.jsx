@@ -1,28 +1,28 @@
-import './index.css'; // or wherever your tailwind CSS file is located
-import './App.css'
-import CertificatesCarousel from './pages/CertificatesCarousel'
-import Footer from './pages/Footer'
-import HeroSection from './pages/HeroSection'
-import Projects from './pages/LatestWorks'
-import Skills from './pages/Skills'
-import Header from './pages/Header';
-import ContactPage from './ui/ContactPage';
-import Education from './pages/ Education';
+import "./index.css"; // or wherever your tailwind CSS file is located
+import "./App.css";
+import CertificatesCarousel from "./pages/CertificatesCarousel";
+import Footer from "./pages/Footer";
+import HeroSection from "./pages/HeroSection";
+import Projects from "./pages/LatestWorks";
+import Skills from "./pages/Skills";
+import Header from "./pages/Header";
+import ContactPage from "./ui/ContactPage";
+import Education from "./pages/ Education";
 
 function App() {
-
   return (
     <>
-    <Header/>
-    <HeroSection/>
-    <Skills/>
+      <Header />
+      <HeroSection />
+      <Skills />
+      <CertificatesCarousel />
+      <Projects />
 
-    <CertificatesCarousel/>
-    <Education/>
-    <ContactPage/>
-    <Footer/>
-</>
-  )
+      <Education />
+      <ContactPage />
+      <Footer />
+    </>
+  );
 }
-// 
-export default App
+//
+export default App;
