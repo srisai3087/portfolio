@@ -71,7 +71,7 @@ const HeroSection = () => {
 
               <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-[#6961ff]">
                 <img
-                  src="public/profile.jpeg"
+                  src="/profile.jpeg"
                   alt="Sri Sai Surada"
                   className="w-full h-full object-cover"
                 />
