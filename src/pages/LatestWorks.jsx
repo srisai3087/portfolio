@@ -14,7 +14,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2
             className="text-3xl md:text-4xl font-bold font-poppins mb-4"
-            style={{ color: '#6961ff' }} // 👈 custom heading color
+            style={{ color: '#6961ff' }} // Custom heading color
           >
             Projects
           </h2>
@@ -23,22 +23,22 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl group"
+              className="bg-gray-800 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl hover:scale-105 group max-w-sm mx-auto"
             >
-              <div className="h-56 overflow-hidden relative">
+              <div className="h-48 overflow-hidden relative">
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform group-hover:scale-110" 
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[rgba(17,17,17,0.8)]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[rgba(17,17,17,0.7)]"></div>
               </div>
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div className="p-5">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech, index) => (
                     <span 
                       key={index} 
@@ -48,20 +48,20 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                <p className="text-[#E0E0E0] mb-4">{project.description}</p>
+                <h3 className="text-lg font-semibold mb-2 text-white">{project.title}</h3>
+                <p className="text-[#E0E0E0] mb-3 text-sm">{project.description}</p>
                 <div className="flex justify-between items-center">
                   <a 
                     href={project.github} 
-                    className="text-primary hover:text-opacity-80 transition-colors"
+                    className="text-primary hover:text-opacity-80 transition-colors text-sm"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View on GitHub
+                    <span className="underline">View on GitHub</span>
                   </a>
                   <a 
                     href={project.liveDemo} 
-                    className="bg-primary hover:bg-opacity-80 text-white px-4 py-2 rounded-lg inline-flex items-center transition-colors"
+                    className="bg-primary hover:bg-opacity-80 text-white px-4 py-1 rounded-md inline-flex items-center text-sm font-medium transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

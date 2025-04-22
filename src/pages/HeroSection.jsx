@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[95vh] flex items-center py-20 px-6 md:px-12 bg-[#0c0d12]"> {/* Updated background color */}
+    <section className="relative min-h-[95vh] flex items-center py-20 px-6 md:px-12 bg-[#0c0d12]">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Section */}
@@ -34,17 +34,19 @@ const HeroSection = () => {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-[#6961ff] hover:bg-opacity-90 text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center" >
+                  className="bg-[#6961ff] hover:bg-opacity-90 text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center">
                   Hire Me
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
 
-                {/* Smaller button size */}
-                <button
+                {/* Download CV button with link */}
+                <a
+                  href="/path/to/your/cv.pdf"  // Provide the correct file path here
+                  download="Sri_Sai_Surada_CV.pdf"  // Optional: Set a filename for download
                   className="border border-[#6961ff] text-[#6961ff] hover:bg-[#6961ff] hover:text-white px-6 py-2 rounded-lg text-base font-medium transition-all flex items-center">
                   Download CV
                   <Download className="ml-2 h-5 w-5" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -68,6 +70,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
+              {/* React bubble without blink effect */}
               <div className="absolute -bottom-2 -left-2 bg-[#0D0D0D] p-3 rounded-full border border-gray-800 shadow-lg">
                 <div className="bg-gradient-to-r from-blue-500 to-cyan-500 w-14 h-14 rounded-full flex items-center justify-center text-white text-xl font-bold">
                   React
@@ -77,8 +80,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Scroll Down */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
+        {/* Scroll Down - Removed blinking */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <button
             onClick={() => scrollToSection('skills')}
             className="flex flex-col items-center text-white hover:text-[#6961ff] transition-colors"

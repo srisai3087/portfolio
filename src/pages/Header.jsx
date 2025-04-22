@@ -42,7 +42,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="text-2xl font-bold text-white font-poppins">
-            <span className="text-primary">srisai</span><span className="text-primary"></span>3087
+            <span className="text-primary">srisai</span><span className="text-primary"></span>_surada
           </a>
           
           {/* Desktop Navigation */}
