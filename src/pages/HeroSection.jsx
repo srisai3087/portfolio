@@ -37,7 +37,7 @@ const HeroSection = () => {
                 </span>
               </h2>
               <p className="text-white mb-8 text-lg">
-              B.Tech Computer Science Engineering student at Lovely Professional University, specializing in Full-Stack Web Development. As a Full Stack Developer, I focus on building seamless web and mobile applications with a strong grasp of both frontend and backend technologies such as React, Node.js, Express, MongoDB, and Firebase. I'm passionate about crafting innovative and user-centric digital experiences, and I thrive on solving complex problems through code. My goal is to work on impactful projects that create real-world value.
+              I’m a B.Tech Computer Science Engineering student at Lovely Professional University, specializing in Full-Stack Web Development. I build responsive and user-friendly web and mobile applications using technologies like React, Node.js, Express, MongoDB, and Firebase. I’m passionate about creating innovative digital solutions and enjoy solving real-world problems through code. My goal is to contribute to impactful projects that deliver real value.
               </p>
 
               <div className="flex flex-wrap gap-4">
